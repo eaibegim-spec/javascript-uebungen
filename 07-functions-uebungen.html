@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Functions-Übungen</title>
+</head>
+<body>
+  <script>
+        
+    function convertToFahrenheit(celsius) {
+      return (celsius * 9/5) + 32;
+    }
+  
+    console.log(convertToFahrenheit(25));
+
+    function convertToCelsius(fahrenheit) {
+      return (fahrenheit - 32) * 5/9;
+    }
+    console.log(convertToCelsius(86));
+
+    function convertTemperature(degrees, unit) {
+      if (unit === 'C') {
+        const result = convertToFahrenheit(degrees);
+        return `${result}F`;
+      } else if (unit === 'F') {
+        const result = convertToCelsius(degrees);
+        return `${result}C`;
+      } 
+    }
+    console.log(convertTemperature(100, 'F'));
+
+    
+    function convertLength(length, from, to) {
+      if (from === 'miles' && to === 'km') {
+        return length * 1.60934;
+      } else if (from === 'km' && to === 'miles') {
+        return length / 1.60934;
+      } else if (from === 'feet' && to === 'km') {
+        return length * 0.0003048;
+      } else if (from === 'km' && to === 'feet') {
+        return length / 0.0003048;
+      }
+      
+    }
+    console.log(convertLength(10, 'miles', 'km'));
+    console.log(convertLength(3281, 'feet', 'km'));
+  </script>
+</body>
+
+</html>
